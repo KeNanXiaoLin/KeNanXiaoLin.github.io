@@ -1,0 +1,29 @@
+# Hugo 输出目录
+public/
+resources/_gen/
+
+# Hugo 缓存
+.hugo_build.lock
+
+# 本地工具（可选：保留 tools/loveit.zip 等资源）
+tools/hugo.exe
+tools/loveit.zip
+
+# 操作系统
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 编辑器
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# 日志
+*.log
+
+# 环境
+.env
+.env.local
