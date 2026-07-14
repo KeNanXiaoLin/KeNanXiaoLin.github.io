@@ -1,0 +1,290 @@
+// ==========================================================================
+// XiaoLin 博客的自定义样式
+// 改这个文件里的内容不会影响主题升级，所有改动都在这里集中管理
+// ==========================================================================
+
+
+// --------------------------------------------------------------------------
+// 1. 字体优化：让中英文混排更舒服
+// --------------------------------------------------------------------------
+
+:root {
+    // 正文：优先用系统中文字体，再退回英文字体
+    --body-font: -apple-system, BlinkMacSystemFont, "PingFang SC",
+                 "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑",
+                 "Helvetica Neue", Helvetica, Arial, sans-serif;
+    // 代码字体：等宽字体优先用系统的
+    --code-font: "JetBrains Mono", "Fira Code", "Source Code Pro",
+                 Consolas, Monaco, "Courier New", monospace;
+}
+
+body,
+.post-content,
+.first-entry,
+.summary,
+.post-footer {
+    font-family: var(--body-font);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code,
+pre,
+kbd {
+    font-family: var(--code-font) !important;
+}
+
+
+// --------------------------------------------------------------------------
+// 2. 调整阅读体验：宽度、字号、行高
+// --------------------------------------------------------------------------
+
+// 文章正文最大宽度（避免在宽屏上一行太长难读）
+.post-content {
+    max-width: 820px;
+    font-size: 16px;
+    line-height: 1.85;
+    color: #2d3748;
+}
+
+// 深色模式下的正文颜色
+.dark-mode .post-content {
+    color: #d1d5db;
+}
+
+// 标题层级更清晰
+.post-content h2 {
+    margin-top: 2.5em;
+    margin-bottom: 0.8em;
+    padding-bottom: 0.3em;
+    border-bottom: 1px dashed #e2e8f0;
+    font-weight: 600;
+}
+
+.dark-mode .post-content h2 {
+    border-bottom-color: #374151;
+}
+
+
+// --------------------------------------------------------------------------
+// 3. 链接样式：悬停时高亮 + 下划线动画
+// --------------------------------------------------------------------------
+
+.post-content a:not(.no-decoration) {
+    color: #2563eb;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.post-content a:not(.no-decoration):hover {
+    color: #1d4ed8;
+    border-bottom-color: currentColor;
+}
+
+
+// --------------------------------------------------------------------------
+// 4. 代码块美化：圆角、阴影
+// --------------------------------------------------------------------------
+
+.post-content code {
+    // 行内代码样式
+    background: #f3f4f6;
+    color: #db2777;
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    font-size: 0.9em;
+    word-break: break-word;
+}
+
+.dark-mode .post-content code {
+    background: #374151;
+    color: #f472b6;
+}
+
+.post-content pre code {
+    // 代码块内：去掉行内代码的背景色冲突
+    background: transparent;
+    color: inherit;
+    padding: 0;
+    border-radius: 0;
+    font-size: 0.9em;
+}
+
+.post-content pre {
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    padding: 1em 1.2em;
+    margin: 1.5em 0;
+    line-height: 1.6;
+}
+
+.dark-mode .post-content pre {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+
+// --------------------------------------------------------------------------
+// 5. 引用块样式：左边加色条，更醒目
+// --------------------------------------------------------------------------
+
+.post-content blockquote {
+    margin: 1.5em 0;
+    padding: 0.8em 1.2em;
+    border-left: 4px solid #2563eb;
+    background: #f8fafc;
+    color: #475569;
+    border-radius: 0 6px 6px 0;
+}
+
+.dark-mode .post-content blockquote {
+    background: #1f2937;
+    color: #9ca3af;
+    border-left-color: #3b82f6;
+}
+
+.post-content blockquote p {
+    margin: 0.3em 0;
+}
+
+
+// --------------------------------------------------------------------------
+// 6. 表格美化：斑马纹 + 圆角 + 悬停高亮
+// --------------------------------------------------------------------------
+
+.post-content table {
+    width: 100%;
+    margin: 1.5em 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.post-content table th,
+.post-content table td {
+    padding: 0.7em 1em;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.post-content table th {
+    background: #f9fafb;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.post-content table tbody tr:nth-child(even) {
+    background: #fafbfc;
+}
+
+.post-content table tbody tr:hover {
+    background: #f0f9ff;
+}
+
+.dark-mode .post-content table th,
+.dark-mode .post-content table td {
+    border-bottom-color: #374151;
+}
+
+.dark-mode .post-content table th {
+    background: #1f2937;
+    color: #f3f4f6;
+}
+
+.dark-mode .post-content table tbody tr:nth-child(even) {
+    background: #1a202c;
+}
+
+.dark-mode .post-content table tbody tr:hover {
+    background: #1e3a5f;
+}
+
+
+// --------------------------------------------------------------------------
+// 7. 首页文章卡片：轻微悬停浮起
+// --------------------------------------------------------------------------
+
+.first-entry,
+.archive-entry,
+.post-entry {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.first-entry:hover,
+.archive-entry:hover,
+.post-entry:hover {
+    transform: translateY(-2px);
+}
+
+
+// --------------------------------------------------------------------------
+// 8. 选中文字的颜色
+// --------------------------------------------------------------------------
+
+::selection {
+    background: #fde68a;
+    color: #1f2937;
+}
+
+.dark-mode ::selection {
+    background: #f59e0b;
+    color: #1f2937;
+}
+
+
+// --------------------------------------------------------------------------
+// 9. 滚动条（Webkit 浏览器）
+// --------------------------------------------------------------------------
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+.dark-mode ::-webkit-scrollbar-thumb {
+    background: #4b5563;
+}
+
+.dark-mode ::-webkit-scrollbar-thumb:hover {
+    background: #6b7280;
+}
+
+
+// --------------------------------------------------------------------------
+// 10. 移动端适配：调整小屏幕的字号
+// --------------------------------------------------------------------------
+
+@media (max-width: 768px) {
+    .post-content {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .post-content h2 {
+        margin-top: 2em;
+    }
+}
+
+
+// --------------------------------------------------------------------------
+// 11. 底部 footer 样式微调
+// --------------------------------------------------------------------------
+
+.footer {
+    padding: 2.5rem 0 2rem;
+    font-size: 0.9em;
+}
