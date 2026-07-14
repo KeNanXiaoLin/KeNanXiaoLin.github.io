@@ -61,9 +61,9 @@
 [params.page.comment.giscus]
   enable = true
   repo = "KeNanXiaoLin/KeNanXiaoLin.github.io"
-  repoId = "R_kgDON_xxxxxx"          # ← 粘贴你的 repoId
+  repoId = "R_你的repoId"            # ← 粘贴你的 repoId
   category = "Announcements"
-  categoryId = "DIC_kwDON_xxxxxx"    # ← 粘贴你的 categoryId
+  categoryId = "DIC_你的categoryId"  # ← 粘贴你的 categoryId
   lang = "zh-CN"                      # ← 改成 "zh-CN"
   mapping = "pathname"
   reactionsEnabled = "1"
@@ -74,7 +74,7 @@
   darkTheme = "dark"
 ```
 
-把 `R_kgDON_xxxxxx` 和 `DIC_kwDON_xxxxxx` 替换成你刚才复制的值。
+把 `R_xxx` 和 `DIC_xxx` 替换成你刚才复制的值。
 
 ### 5. 部署并验证
 

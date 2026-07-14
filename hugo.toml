@@ -315,14 +315,13 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       # giscus 评论系统设置
       [params.page.comment.giscus]
         enable = true
-        # ⚠️ 以下信息需要在 https://giscus.app/zh-CN 配置后填入
-        # ⚠️ 部署到 GitHub Pages 后才能正常加载评论
+        # ✅ 已配置 Giscus 评论 (2026-07-14)
         repo = "KeNanXiaoLin/KeNanXiaoLin.github.io"
-        repoId = "R_PLACEHOLDER_REPO_ID"
+        repoId = "R_kgDOTYFMrA"
         category = "Announcements"
-        categoryId = "DIC_PLACEHOLDER_CATEGORY_ID"
+        categoryId = "DIC_kwDOTYFMrM4DBK-z"
         # automatically adapt the current theme i18n configuration when empty
-        lang = ""
+        lang = "zh-CN"
         mapping = "pathname"
         reactionsEnabled = "1"
         emitMetadata = "0"
