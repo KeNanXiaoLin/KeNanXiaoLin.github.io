@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>《代码整洁之道》读书笔记 - XiaoLin 的博客</title><meta name="Description" content="重读《代码整洁之道》时的一些笔记。"><meta property="og:url" content="https://KeNanXiaoLin.github.io/reading-notes/">
+	<meta property="og:site_name" content="XiaoLin 的博客">
+	<meta property="og:title" content="《代码整洁之道》读书笔记">
+	<meta property="og:description" content="重读《代码整洁之道》时的一些笔记。">
+	<meta property="og:locale" content="zh_cn">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2026-07-14T08:00:00+08:00">
+		<meta property="article:modified_time" content="2026-07-14T08:00:00+08:00">
+		<meta property="article:tag" content="读书笔记">
+		<meta property="article:tag" content="编程">
+		<meta property="og:image" content="https://KeNanXiaoLin.github.io/logo.png">
+
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image" content="https://KeNanXiaoLin.github.io/logo.png">
+	<meta name="twitter:title" content="《代码整洁之道》读书笔记">
+	<meta name="twitter:description" content="重读《代码整洁之道》时的一些笔记。">
+<meta name="application-name" content="XiaoLin 的博客">
+<meta name="apple-mobile-web-app-title" content="XiaoLin 的博客">
+<meta name="referrer" content="no-referrer" /><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://KeNanXiaoLin.github.io/reading-notes/" /><link rel="prev" href="https://KeNanXiaoLin.github.io/life-snippet/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "《代码整洁之道》读书笔记",
+        "inLanguage": "zh-cn",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/KeNanXiaoLin.github.io\/reading-notes\/"
+        },"image": ["https:\/\/KeNanXiaoLin.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "读书笔记, 编程","wordcount":  413 ,
+        "url": "https:\/\/KeNanXiaoLin.github.io\/reading-notes\/","datePublished": "2026-07-14T08:00:00+08:00","dateModified": "2026-07-14T08:00:00+08:00","license": "本站文章采用 CC BY-NC 4.0 协议，转载请注明出处。","publisher": {
+            "@type": "Organization",
+            "name": "XiaoLin","logo": "https:\/\/KeNanXiaoLin.github.io\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "XiaoLin"
+            },"description": "重读《代码整洁之道》时的一些笔记。"
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>
+          const query = window.matchMedia('(prefers-color-scheme: dark)');
+          function applyTheme() {
+            let theme = window.localStorage?.getItem('theme') || 'auto';
+            let isDark = theme === 'dark' || (theme === 'auto' && query.matches);
+            document.body.setAttribute('theme', isDark? 'dark' : 'light');
+            document.body.setAttribute('cfg-theme', theme);
+          }
+
+          applyTheme();
+          query.addEventListener('change', applyTheme);
+        </script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="XiaoLin 的博客"><span class="header-title-pre"><i class='far fa-kiss-wink-heart' aria-hidden='true'></i></span>XiaoLin 的博客</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/KeNanXiaoLin" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github' aria-hidden='true'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="XiaoLin 的博客"><span class="header-title-pre"><i class='far fa-kiss-wink-heart' aria-hidden='true'></i></span>XiaoLin 的博客</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/KeNanXiaoLin" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github' aria-hidden='true'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">《代码整洁之道》读书笔记</h1><h2 class="single-subtitle">Clean Code 重点摘录</h2><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/KeNanXiaoLin" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle" aria-hidden="true"></i>XiaoLin</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E8%AF%BB%E4%B9%A6/"><i class="far fa-folder" aria-hidden="true"></i>读书</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt" aria-hidden="true"></i>&nbsp;<time datetime="2026-07-14">2026-07-14</time>&nbsp;<i class="fas fa-pencil-alt" aria-hidden="true"></i>&nbsp;约 413 字&nbsp;
+                <i class="far fa-clock" aria-hidden="true"></i>&nbsp;预计阅读 1 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#什么是有意义的命名">什么是有意义的命名</a></li>
+    <li><a href="#函数应该短小">函数应该短小</a></li>
+    <li><a href="#注释是不得已而为之">注释是不得已而为之</a></li>
+    <li><a href="#一些具体的小习惯">一些具体的小习惯</a></li>
+    <li><a href="#写代码是一次与人协作的过程">写代码是一次与人协作的过程</a></li>
+    <li><a href="#还在读">还在读</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>最近重读了 Robert C. Martin 的《Clean Code》，把一些对我有启发的段落和我的思考整理下来。</p>
+<h2 id="什么是有意义的命名">什么是有意义的命名</h2>
+<blockquote>
+<p>使用能够表达意图的命名。
+—— Robert C. Martin</p>
+</blockquote>
+<p>变量、函数、类的命名要回答三个问题：<strong>为什么存在、做什么、怎么用</strong>。</p>
+<p>差的命名：</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-python">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">pass</span></span></span></code></pre></div></div>
+<p>好的命名：</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-python">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">fetch_user_profile</span><span class="p">(</span><span class="n">user_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">UserProfile</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">pass</span></span></span></code></pre></div></div>
+<h2 id="函数应该短小">函数应该短小</h2>
+<blockquote>
+<p>函数的第一规则是短小，第二规则是更短小。</p>
+</blockquote>
+<p>一个函数做一件事。判断标准：<strong>如果还能再拆出一个函数，那就拆</strong>。</p>
+<h2 id="注释是不得已而为之">注释是不得已而为之</h2>
+<blockquote>
+<p>好的代码本身就是最好的文档。</p>
+</blockquote>
+<p>能用代码说清楚的就别写注释。注释存在的唯一理由是：<strong>代码说不清楚的</strong>。</p>
+<h2 id="一些具体的小习惯">一些具体的小习惯</h2>
+<ul>
+<li>布尔变量用 <code>is_xxx</code>、<code>has_xxx</code> 开头</li>
+<li>函数动词开头： <code>get_xxx</code>、<code>create_xxx</code>、<code>delete_xxx</code></li>
+<li>常量大写加下划线</li>
+<li>避免魔法数字，用常量</li>
+<li>错误处理优于返回错误码</li>
+</ul>
+<h2 id="写代码是一次与人协作的过程">写代码是一次与人协作的过程</h2>
+<blockquote>
+<p>代码是写给人看的，恰好机器能执行。</p>
+</blockquote>
+<p>三个月后看自己写的代码会感谢当时写得清晰的自己。也会骂当时偷懒的自己。</p>
+<h2 id="还在读">还在读</h2>
+<p>书还没读完，先记到这里。下次再补充章节。</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2026-07-14</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/reading-notes/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 X" data-sharer="x" data-url="https://KeNanXiaoLin.github.io/reading-notes/" data-title="《代码整洁之道》读书笔记" data-hashtags="读书笔记,编程"><i class="fab fa-x-twitter" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Threads" data-sharer="threads" data-url="https://KeNanXiaoLin.github.io/reading-notes/" data-title="《代码整洁之道》读书笔记"><i class="fab fa-threads" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Linkedin" data-sharer="linkedin" data-url="https://KeNanXiaoLin.github.io/reading-notes/"><i class="fab fa-linkedin" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://KeNanXiaoLin.github.io/reading-notes/" data-title="《代码整洁之道》读书笔记"><i class="fab fa-weibo" aria-hidden="true"></i></a><a href="https://t.me/share/url?url=https%3a%2f%2fKeNanXiaoLin.github.io%2freading-notes%2f&amp;text=%e3%80%8a%e4%bb%a3%e7%a0%81%e6%95%b4%e6%b4%81%e4%b9%8b%e9%81%93%e3%80%8b%e8%af%bb%e4%b9%a6%e7%ac%94%e8%ae%b0" target="_blank" title="分享到 Telegram"><i class="fab fa-telegram" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags" aria-hidden="true"></i>&nbsp;<a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>,&nbsp;<a href="/tags/%E7%BC%96%E7%A8%8B/">编程</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/life-snippet/" class="prev" rel="prev" title="夏天的傍晚"><i class="fas fa-angle-left" aria-hidden="true"></i>夏天的傍晚</a></div>
+</div>
+<div id="comments"><div id="giscus" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://giscus.app">Giscus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.164.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 1.0.0"><i class="far fa-kiss-wink-heart" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright" aria-hidden="true"></i><span itemprop="copyrightYear">2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/KeNanXiaoLin" target="_blank">XiaoLin</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up" aria-hidden="true"></i>
+            </a>
+        </div>
+
+        <div id="fixed-buttons-hidden"><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment" aria-hidden="true"></i>
+            </a>
+        </div><script src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.2/sharer.min.js"></script><script>window.config={"comment":{"giscus":{"category":"Announcements","categoryId":"DIC_PLACEHOLDER_CATEGORY_ID","darkTheme":"dark","emitMetadata":"0","inputPosition":"bottom","lang":"zh-CN","lazyLoading":false,"lightTheme":"light","mapping":"pathname","reactionsEnabled":"1","repo":"KeNanXiaoLin/KeNanXiaoLin.github.io","repoId":"R_PLACEHOLDER_REPO_ID"}},"search":{"fuseIndexURL":"/index.json","fuseOpts":{"distance":100,"findAllMatches":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"minMatchCharLength":2,"threshold":0.3},"highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":30,"type":"fuse"}};</script><script src="/js/theme.js"></script></body>
+</html>

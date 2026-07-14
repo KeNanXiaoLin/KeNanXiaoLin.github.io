@@ -1,0 +1,50 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>XiaoLin 的博客</title>
+        <link>https://KeNanXiaoLin.github.io/</link>
+        <description>以为热爱技术的菜鸟的个人博客，记录技术学习与生活点滴。</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>2496463252@qq.com (XiaoLin)</managingEditor>
+            <webMaster>2496463252@qq.com (XiaoLin)</webMaster><copyright>本站文章采用 CC BY-NC 4.0 协议，转载请注明出处。</copyright><lastBuildDate>Tue, 14 Jul 2026 10:00:00 &#43;0800</lastBuildDate>
+            <atom:link href="https://KeNanXiaoLin.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <item>
+    <title>《代码整洁之道》读书笔记</title>
+    <link>https://KeNanXiaoLin.github.io/reading-notes/</link>
+    <pubDate>Tue, 14 Jul 2026 08:00:00 &#43;0800</pubDate>
+    <author>2496463252@qq.com (XiaoLin)</author>
+    <guid>https://KeNanXiaoLin.github.io/reading-notes/</guid>
+    <description><![CDATA[<p>最近重读了 Robert C. Martin 的《Clean Code》，把一些对我有启发的段落和我的思考整理下来。</p>]]></description>
+</item>
+<item>
+    <title>夏天的傍晚</title>
+    <link>https://KeNanXiaoLin.github.io/life-snippet/</link>
+    <pubDate>Mon, 13 Jul 2026 19:00:00 &#43;0800</pubDate>
+    <author>2496463252@qq.com (XiaoLin)</author>
+    <guid>https://KeNanXiaoLin.github.io/life-snippet/</guid>
+    <description><![CDATA[<p>七月的傍晚，热气还没完全散掉。</p>]]></description>
+</item>
+<item>
+    <title>搭建这个博客踩过的坑</title>
+    <link>https://KeNanXiaoLin.github.io/first-tech-post/</link>
+    <pubDate>Sun, 12 Jul 2026 14:00:00 &#43;0800</pubDate>
+    <author>2496463252@qq.com (XiaoLin)</author>
+    <guid>https://KeNanXiaoLin.github.io/first-tech-post/</guid>
+    <description><![CDATA[<p>搭建个人博客听起来简单，但实际操作中还是会遇到一些坑。这篇文章记录我从零搭建这个博客时遇到的问题和解决方案。</p>]]></description>
+</item>
+<item>
+    <title>Markdown 语法速查</title>
+    <link>https://KeNanXiaoLin.github.io/markdown-syntax-guide/</link>
+    <pubDate>Sat, 11 Jul 2026 10:00:00 &#43;0800</pubDate>
+    <author>2496463252@qq.com (XiaoLin)</author>
+    <guid>https://KeNanXiaoLin.github.io/markdown-syntax-guide/</guid>
+    <description><![CDATA[<p>这是一篇速查表，覆盖了在 Hugo + LoveIt 主题下写文章时最常用的 Markdown 语法。收藏起来，写文章的时候随时翻一翻。</p>]]></description>
+</item>
+<item>
+    <title>欢迎来到我的博客</title>
+    <link>https://KeNanXiaoLin.github.io/welcome/</link>
+    <pubDate>Fri, 10 Jul 2026 09:00:00 &#43;0800</pubDate>
+    <author>2496463252@qq.com (XiaoLin)</author>
+    <guid>https://KeNanXiaoLin.github.io/welcome/</guid>
+    <description><![CDATA[<p>这是 <strong>XiaoLin 的博客</strong> 的第一篇文章，主要写点流水账。如果你正在阅读这段文字，那么这个网站已经成功部署到 GitHub Pages 了。🎉</p>]]></description>
+</item>
+</channel>
+</rss>
